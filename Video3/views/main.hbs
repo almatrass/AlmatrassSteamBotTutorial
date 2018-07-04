@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md bg-light navbar-light">
+		  <a class="navbar-brand" href="#">NodeJS example</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Page 1</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Page 2</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Page 3</a>
+			  </li> 
+			</ul>
+			  <div class="ml-auto">
+				  {{#if user}}
+				  	<a href="/logout">Logout</a>
+				  {{else}}
+				  <a href="/auth/steam"><img src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png"></a>
+				  {{/if}}
+			  </div>
+		  </div> 
+		</nav>
+		
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-sm-12">
+					<h2>Your information</h2>
+					{{#if user}}
+					<img src="{{user.avatar}}"><br>
+					Your steamid: {{user.steamid}}<br>
+					Your name: {{user.personaname}}<br>
+					Your real name: {{user.realname}}
+					{{else}}
+					Login to see your info!
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
